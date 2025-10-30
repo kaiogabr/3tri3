@@ -28,7 +28,9 @@ subtitulo.content = "Meus Pacientes";
     var pesoValido = true;
     var alturaValido = true;
 
-    
+    //acessa e altera o imc
+    var tdImc = paciente.querySelector(".info-imc");
+    tdImc.textContent = imc;
    
 
     //define quando o imc sera calculado
@@ -42,7 +44,7 @@ subtitulo.content = "Meus Pacientes";
        console.log("peso invalido");
        var pesoValido = false;
        tdImc.textContent = "Peso Invalido"
-       p/aciente.classList.add("campo-invalido");
+       paciente.classList.add("campo-invalido");
        paciente.Style.backgroundcolor = "red";
     }
 
@@ -65,52 +67,23 @@ subtitulo.content = "Meus Pacientes";
       alert("Este elemento foi clicado");
     }
 
+        
+     }   
+         function calcularImc(peso,altura){
+            var imc = 0;
 
-    //acessa o botao
-    var botaoAdicionar = document.querySelector("#adicionar-paciente");
+            imc = peso/(altura*altura);
 
-    //o que acontece quando clica
-    botaoAdicionar.addEventListener ('click', function(event){
-      event.preventDefault()
+            return imc.toFixed(1);
+    }
+            
 
- //acessa o formulario
- var formulario = document.querySelector("#form-adiciona");
-console.log(formulario);
-
- //caça os valores
- var nome = formulario.nome.value;
- var peso = formulario.peso.value;
- var altura = formulario.altura.value;
- var gordura = formulario.gordura.value;
-
- //cria tag tr
- var pacienteTr = document.createElement("tr");
-
- var nomeTd = document.createElement("td");
- var pesoTd = document.createElement("td");
- var alturaTd = document.createElement("td");
- var gorduraTd = document.createElement("td");
- var imcTd = document.createElement("td");
-
- //adiciona os valores
- nomeTd.textcontent = nome;
- pesoTd.textcontent = peso;
- alturaTd.textcontent = altura;
- gorduraTd.textcontent = gordura;
- imcTd.textcontent = imc;
-
- //Adiciona as tags na tela do usuario
-      pacienteTr.appendChild(nomeTd);
-      pacienteTr.appendChild(pesoTd);
-      pacienteTr.appendChild(alturaTd);
-      pacienteTr.appendChild(gorduraTd);
-      pacienteTr.appendChild(imcTd);
-
-      var tabela = document.querySelector("#tabela-pacientes");
-      tabela.appendChild(pacienteTr);
-
-    });
+            
 
 
-   
+
+
+
+            
+            
             
