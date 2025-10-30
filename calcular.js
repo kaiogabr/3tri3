@@ -1,7 +1,7 @@
             var subtitulo = document.querySelector(".subtitulo");
 			subtitulo.textContent = "Meus Pacientes";
 			var marca = document.querySelector(".titulo");
-			marca.textContent = "Julia Nutrition";
+			marca.textContent = "Kaio Nutrição";
 
             
 
